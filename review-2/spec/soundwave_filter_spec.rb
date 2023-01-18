@@ -6,4 +6,10 @@ RSpec.describe 'soundwave_filter method' do
     expect(soundwave_filter([20,25,45,50,45], 20, 50)).to eq [20,25,45,50,45]
   end
 
+  it "returns a new soundwave if a frequency falls below lower limit" do
+    expect(soundwave_filter([10,25,45,50,45], 15, 50)).to eq [15,25,45,50,45]
+  end
+
+  
+
 end
