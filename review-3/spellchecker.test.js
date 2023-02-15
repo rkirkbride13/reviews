@@ -15,5 +15,9 @@ describe("spellchecker", () => {
     it("returns a formatted incorrectly spelled single character word", () => {
       expect(spellchecker("z")).toBe("~z~");
     });
+
+    it("returns a formatted incorrectly spelled single character word", () => {
+      expect(spellchecker("ot")).toBe("~ot~");
+    });
   });
 });
