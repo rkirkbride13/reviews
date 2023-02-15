@@ -1,14 +1,10 @@
+const dictionary = require("./dictionary");
+
 const spellchecker = (word) => {
-  if (word === "a") {
-    return "a";
-  } else if (word.length === 2) {
-    if (word === "to") {
-      return "to";
-    } else {
-      return "~ot~";
-    }
+  if (dictionary.includes(word)) {
+    return word
   } else {
-    return "~z~";
+    return `~${word}~`
   }
 };
 
