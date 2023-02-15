@@ -1,5 +1,9 @@
 const spellchecker = (word) => {
-  return "a";
+  if (word === "a") {
+    return "a";
+  } else {
+    return "~z~";
+  }
 };
 
-module.exports = {spellchecker}
+module.exports = { spellchecker };
