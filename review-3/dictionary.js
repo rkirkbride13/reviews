@@ -1,3 +1,3 @@
-const dictionary = ["a", "to"];
+const dictionary = ["a", "to", "the"];
 
 module.exports = dictionary;
