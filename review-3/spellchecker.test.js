@@ -13,6 +13,18 @@ describe("spellchecker", () => {
     it("returns a three character word", () => {
       expect(spellchecker("the")).toBe("the");
     });
+
+    it("returns a three character word", () => {
+      expect(spellchecker("word")).toBe("word");
+    });
+
+    it("is not case sensitive", () => {
+      expect(spellchecker("Word")).toBe("word");
+    });
+
+    it("checks spelling of multiple words", () => {
+      expect(spellchecker("the dog walked home")).toBe("the dog walked home");
+    });
   });
 
   describe("incorrectly spelled words", () => {
@@ -26,6 +38,16 @@ describe("spellchecker", () => {
 
     it("returns a formatted incorrectly spelled three character word", () => {
       expect(spellchecker("thw")).toBe("~thw~");
+    });
+
+    it("returns a formatted incorrectly spelled three character word", () => {
+      expect(spellchecker("wrd")).toBe("~wrd~");
+    });
+
+    it("checks spelling of multiple words", () => {
+      expect(spellchecker("thw dpg wlked hme")).toBe(
+        "~thw~ ~dpg~ ~wlked~ ~hme~"
+      );
     });
   });
 });
