@@ -25,4 +25,8 @@ describe("Equation reader", () => {
   it('reads a two term input with division and outputs the foramtted equation', () => {
     expect(equation_reader("1 / 1")).toEqual(["1 / 1", 1.0])
   })
+
+  it('reads a two term input with division and outputs the foramtted equation', () => {
+    expect(equation_reader("2 * 3")).toEqual(["2 * 3", 6.0])
+  })
 })
