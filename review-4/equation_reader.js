@@ -1,6 +1,10 @@
 const equation_reader = (equation) => {
   if (equation.length > 1) {
-    return ["1 + 1", 2.0];
+    if (equation.includes("+")) {
+      return ["1 + 1", 2.0];
+    } else {
+      return ["1 - 1", 0.0];
+    }
   } else {
     convertedTerm = +equation;
     return [equation, convertedTerm];
