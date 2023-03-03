@@ -9,4 +9,8 @@ describe("Equation reader", () => {
   it('reads another single term input and outputs the foramtted term', () => {
     expect(equation_reader("2")).toEqual(["2", 2.0])
   })
+
+  it('reads a two term input and outputs the foramtted equation', () => {
+    expect(equation_reader("1 + 1")).toEqual(["1 + 1", 2.0])
+  })
 })
