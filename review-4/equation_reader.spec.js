@@ -17,4 +17,12 @@ describe("Equation reader", () => {
   it('reads a two term input with subtract and outputs the foramtted equation', () => {
     expect(equation_reader("1 - 1")).toEqual(["1 - 1", 0.0])
   })
+
+  it('reads a two term input with mulitplication and outputs the foramtted equation', () => {
+    expect(equation_reader("1 * 1")).toEqual(["1 * 1", 1.0])
+  })
+
+  it('reads a two term input with division and outputs the foramtted equation', () => {
+    expect(equation_reader("1 / 1")).toEqual(["1 / 1", 1.0])
+  })
 })
