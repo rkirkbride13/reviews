@@ -1,17 +1,25 @@
 const equation_reader = (equation) => {
   if (equation.length > 1) {
-    if (equation.includes("+")) {
-      return ["1 + 1", 2.0];
-    } else if (equation.includes("-")) {
-      return ["1 - 1", 0.0];
-    } else if (equation.includes("*")) {
-      if (equation.includes("2")) {
-        return ["2 * 3", 6.0];
-      }
-      return ["1 * 1", 1.0];
-    } else {
-      return ["1 / 1", 1.0];
+    terms = equation.split(" ");
+    [firstTerm, operator, secondTerm] = terms;
+    let result;
+    switch (`${operator}`) {
+      case "+":
+        result = +firstTerm + +secondTerm;
+        break;
+      case "-":
+        result = +firstTerm - +secondTerm;
+        break;
+      case "/":
+        result = +firstTerm / +secondTerm;
+        break;
+      case "*":
+        result = +firstTerm * +secondTerm;
+        break;
+      default:
+        result = "Invalid operator";
     }
+    return [`${firstTerm} ${operator} ${secondTerm}`, result];
   } else {
     convertedTerm = +equation;
     return [equation, convertedTerm];
